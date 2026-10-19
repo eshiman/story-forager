@@ -1,0 +1,99 @@
+/* Plain, readable, system fonts only. Follows the device's light/dark setting. */
+:root {
+  --bg: #fbf8f1;
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+  --link: #2a5d8f;
+  --rule: #e4ded2;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1c;
+    --text: #e0ddd5;
+    --muted: #9a978f;
+    --link: #8fb8de;
+    --rule: #333;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+header, main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-title {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main { padding-bottom: 4rem; }
+
+a { color: var(--link); }
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin: 2rem 0 0.5rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0;
+}
+
+article p { margin: 0 0 1.1em; }
+
+.intro { color: var(--muted); margin: 1.5rem 0; }
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li { border-bottom: 1px solid var(--rule); }
+
+/* Whole row is the tap target — easy on phones. */
+.post-list a {
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+.post-title {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--link);
+}
+
+.post-list .meta { display: block; margin-top: 0.2rem; }
+
+.back, .feed { margin-top: 3rem; }
+
+.feed { font-size: 0.95rem; }

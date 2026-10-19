@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<p class="intro">{{ site.description }}</p>
+<ul class="post-list">
+  {%- for post in collections.posts | reverse %}
+  <li>
+    <a href="{{ post.url }}">
+      <span class="post-title">{{ post.data.title }}</span>
+      <span class="meta">{{ post.data.author }}{% if post.data.source %} · {{ post.data.source }}{% endif %}</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+<p class="feed"><a href="/feed.xml">RSS feed</a></p>

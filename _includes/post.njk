@@ -1,0 +1,12 @@
+---
+layout: base.njk
+---
+<article>
+  <h1>{{ title }}</h1>
+  <p class="meta">
+    {% if author %}by {{ author }}{% endif %}
+    {% if source %}<br>{{ source }}{% endif %}
+  </p>
+  {{ content | safe }}
+</article>
+<p class="back"><a href="/">← All stories</a></p>
